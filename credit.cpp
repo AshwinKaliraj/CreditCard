@@ -33,3 +33,14 @@ bool cardValidation(string &cardNumber, double amount) {
     cout << "Invalid card" << endl;
     return false;
 }
+void accountValidity(string cardNumber, double amount) {
+    for (auto &c : customerDB) {
+        if (c.cardNumber == cardNumber) {
+            cout << "Account is valid" << endl;
+            c.balance -= amount;
+            cout << "Transaction complete" << endl;
+            cout << "Customer DB updated" << endl;
+            cout << "Card holder will receive statement at the end of the cycle" << endl;
+        }
+    }
+}
