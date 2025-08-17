@@ -44,3 +44,24 @@ void accountValidity(string cardNumber, double amount) {
         }
     }
 }
+int main() {
+    string cardNumber;
+    double amount;
+
+    cout << "Enter card number: ";
+    cin >> cardNumber;
+    cout << "Enter amount: ";
+    cin >> amount;
+
+    while (!cardValidation(cardNumber, amount)) {
+        cout << "\nTry again\n";
+        cout << "Enter card number: ";
+        cin >> cardNumber;
+        cout << "Enter amount: ";
+        cin >> amount;
+    }
+
+    accountValidity(cardNumber, amount);
+
+    return 0;
+}
